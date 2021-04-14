@@ -7,31 +7,31 @@
         "bind": [
             "enp1s0"
         ],
-        "advertiser": "ciao"
+        "advertiser": "bonjour-hap"
     },
     "accessories": [
         {
-            "accessory": "MiAirPurifier",
-            "name": "Joey",
-            "ip": "192.168.100.8",
-            "token": "7feba0b7c94bea15b32c9daaab7ec1fb",
-            "showTemperature": true,
-            "showHumidity": true,
-            "showAirQuality": true,
-            "showLED": true,
-            "showBuzzer": true
-        },
-        {
-            "name": "Air Purifier",
-            "address": "192.168.31.197",
+            "accessory": "MiAirPurifierPro",
+            "name": "Čistička",
+            "ip": "192.168.31.197",
             "token": "f9b6729d6242af91bfefd7fc6afcbdac",
-            "enableAirQuality": true,
-            "enableTemperature": true,
-            "enableHumidity": true,
-            "filterChangeThreshold": 5,
-            "enableFanSpeedControl": false,
-            "enableChildLockControl": false,
-            "accessory": "XiaomiMiAirPurifier"
+            "enableLED": false,
+            "enableLEDName": "FanLight",
+            "enableBuzzer": false,
+            "enableBuzzerName": "Buzzer",
+            "showTemperature": true,
+            "showTemperatureName": "Teplota",
+            "showHumidity": true,
+            "showHumidityName": "Vlhkosť",
+            "showAirQuality": true,
+            "showAirQualityName": "Kvalita",
+            "pm25_breakpoints": [
+                5,
+                12,
+                35,
+                55
+            ],
+            "polling_interval": 60000
         }
     ],
     "platforms": [
@@ -262,8 +262,5 @@
                 }
             ]
         }
-    ],
-    "disabledPlugins": [
-        "homebridge-broadlink-rm"
     ]
 }
