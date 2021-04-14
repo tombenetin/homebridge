@@ -1,17 +1,15 @@
 {
     "bridge": {
-        "name": "Homebridge A0CF",
-        "username": "0E:B7:82:02:A0:CF",
-        "port": 51383,
-        "pin": "292-37-056"
+        "name": "Homebridge 311E",
+        "username": "0E:73:39:5C:31:2E",
+        "port": 51016,
+        "pin": "807-23-749",
+        "bind": [
+            "enp1s0"
+        ],
+        "advertiser": "ciao"
     },
     "accessories": [
-        {
-            "accessory": "broadlinkSP",
-            "name": "Light",
-            "mac": "34:EA:34:F5:4E:13",
-            "type": "switch"
-        },
         {
             "accessory": "MiAirPurifier",
             "name": "Joey",
@@ -22,18 +20,34 @@
             "showAirQuality": true,
             "showLED": true,
             "showBuzzer": true
+        },
+        {
+            "name": "Air Purifier",
+            "address": "192.168.31.197",
+            "token": "f9b6729d6242af91bfefd7fc6afcbdac",
+            "enableAirQuality": true,
+            "enableTemperature": true,
+            "enableHumidity": true,
+            "filterChangeThreshold": 5,
+            "enableFanSpeedControl": false,
+            "enableChildLockControl": false,
+            "accessory": "XiaomiMiAirPurifier"
         }
     ],
     "platforms": [
         {
             "name": "Config",
             "port": 8581,
+            "auth": "none",
+            "theme": "auto",
+            "tempUnits": "c",
+            "lang": "auto",
             "platform": "config"
         },
         {
             "platform": "broadlinkS1C",
             "name": "S1C",
-            "ip": "192.168.100.26",
+            "ip": "192.168.31.24",
             "stayMode": "disarm",
             "awayMode": "full_arm",
             "nightMode": "part_arm",
@@ -248,5 +262,8 @@
                 }
             ]
         }
+    ],
+    "disabledPlugins": [
+        "homebridge-broadlink-rm"
     ]
 }
